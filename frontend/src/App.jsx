@@ -46,7 +46,7 @@ const IHC_GENE_MAP = { ER: "ESR1", PR: "PGR", HER2: "ERBB2", KI67: "MKI67" };
 // through segmentation / SEQUOIA / virtual-IHC inference. Left blank by
 // default — uploaded ROIs display the raw H&E only until this is set, rather
 // than silently failing against a fake URL.
-const ANALYSIS_API_URL = import.meta.env.VITE_ANALYSIS_API_URL || "https://your-username--mammomap-inference-api-analyze-roi.modal.run";
+const ANALYSIS_API_URL = import.meta.env.VITE_ANALYSIS_API_URL || "https://ersanchezo-66169--mammomap-inference-api-analyze-roi.modal.run";
 // ─── Mitosis detection hook (Nottingham grade — mitotic count component) ─────
 // Points at a Modal endpoint wrapping TIAToolbox's pretrained KongNet mitosis
 // detector (model "KongNet_Det_MIDOG_1"), run in patch_mode since MammoMap
