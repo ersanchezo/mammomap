@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/analyze",
+      "destination": "https://<your-username>--mammomap-inference-api-analyze-roi.modal.run"
+    }
+  ]
+}
