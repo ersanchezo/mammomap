@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, useCallback, useReducer, useMemo } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 // ─── Design tokens ────────────────────────────────────────────────────────────
 const T = {
@@ -1580,12 +1581,20 @@ export default function App() {
     setView("viewer");
   };
 
-  if (view === "viewer" && caseRois.length > 0) return <AnalysisViewer rois={caseRois} onBack={() => setView("gallery")}/>;
+  if (view === "viewer" && caseRois.length > 0) return (
+    <>
+      <AnalysisViewer rois={caseRois} onBack={() => setView("gallery")}/>
+      <Analytics />
+    </>
+  );
   return (
-    <Gallery
-      patients={[...DEMO_PATIENTS, ...customPatients]}
-      onSelectPatient={(rois) => { setCaseRois(rois); setView("viewer"); }}
-      onUploadPatient={handleUploadPatient}
-    />
+    <>
+      <Gallery
+        patients={[...DEMO_PATIENTS, ...customPatients]}
+        onSelectPatient={(rois) => { setCaseRois(rois); setView("viewer"); }}
+        onUploadPatient={handleUploadPatient}
+      />
+      <Analytics />
+    </>
   );
 }
